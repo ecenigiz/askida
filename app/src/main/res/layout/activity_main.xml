@@ -74,7 +74,7 @@
               app:layout_constraintRight_toLeftOf="@id/register"
               android:layout_marginTop="10dp"
               android:id="@+id/forgetPassword"
-              android:text="forget_password"
+              android:text="Forget password ? "
               android:textSize="16sp"
               android:textStyle="bold"
     />
