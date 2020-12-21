@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "266675300464",
+    "project_id": "askida-6b058",
+    "storage_bucket": "askida-6b058.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266675300464:android:4e0ab6de587be3a09aacb5",
+        "android_client_info": {
+          "package_name": "com.example.askida"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266675300464-1odiksvvo0d2j07v0pvfoc3j08mjd9co.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChwnCYHaBTvqoewI8y3FYviujg-lmJ7_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266675300464-1odiksvvo0d2j07v0pvfoc3j08mjd9co.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

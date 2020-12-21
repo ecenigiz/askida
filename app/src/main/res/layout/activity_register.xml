@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Register">
+        tools:context=".ui.Register">
 
     <TextView
             android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
 
     <EditText android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/name"
+              android:id="@+id/etname"
               app:layout_constraintTop_toBottomOf="@id/bannerDescription"
               android:layout_marginHorizontal="10dp"
               android:layout_marginTop="60dp"
@@ -47,8 +47,8 @@
 
     <EditText android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/email"
-              app:layout_constraintTop_toBottomOf="@id/name"
+              android:id="@+id/etemail"
+              app:layout_constraintTop_toBottomOf="@id/etname"
               android:layout_marginHorizontal="10dp"
               android:layout_marginTop="12dp"
               android:hint="email_address"
@@ -60,8 +60,8 @@
     />
     <EditText android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/password"
-              app:layout_constraintTop_toBottomOf="@id/email"
+              android:id="@+id/etpassword"
+              app:layout_constraintTop_toBottomOf="@id/etemail"
               android:layout_marginHorizontal="10dp"
               android:layout_marginTop="12dp"
               android:hint="password"
@@ -74,18 +74,18 @@
     <CheckBox android:layout_width="0dp" android:layout_height="wrap_content"
               android:id="@+id/brand_check"
               android:text="Is you a market place?"
-              app:layout_constraintTop_toBottomOf="@id/password"
-              app:layout_constraintRight_toRightOf="@id/password"
-              app:layout_constraintLeft_toLeftOf="@id/password"
+              app:layout_constraintTop_toBottomOf="@id/etpassword"
+              app:layout_constraintRight_toRightOf="@id/etpassword"
+              app:layout_constraintLeft_toLeftOf="@id/etpassword"
               android:layout_marginTop="12dp"
               android:textSize="20sp"
     />
     <Button android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:id="@+id/signIn"
+            android:id="@+id/btn_register"
             android:layout_marginTop="24dp"
             android:backgroundTint="@android:color/holo_purple"
             android:textStyle="bold"
-            android:text="LOGIN"
+            android:text="Register"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             app:layout_constraintLeft_toLeftOf="parent"
