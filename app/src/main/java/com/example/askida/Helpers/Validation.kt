@@ -8,4 +8,6 @@ class Validation {
         if (isEmpty) text.setError(errorMessage)
         return isEmpty
     }
+// var flag= validate.validateSetErrorTextIsEmpty(email,RequireMail)
+
 }
