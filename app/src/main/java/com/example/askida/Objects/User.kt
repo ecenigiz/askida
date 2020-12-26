@@ -1,5 +1,7 @@
 package com.example.askida.Objects
 
+import com.example.askida.Cart
+
 class User {
     var Name: String = "";
     var Email: String = "";
