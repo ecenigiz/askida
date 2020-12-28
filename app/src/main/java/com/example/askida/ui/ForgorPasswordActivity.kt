@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.activity_register.*
 class ForgorPasswordActivity : AppCompatActivity() {
 
     lateinit var auth: FirebaseAuth
-    private lateinit var vm: ForgotPasswordVM
+    private  var vm=ForgotPasswordVM()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

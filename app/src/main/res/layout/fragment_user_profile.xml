@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/user_profile"
+        android:layout_margin="24dp"
+
+/>
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ece"
+        app:layout_constraintTop_toBottomOf="@id/img_profile"
+        app:layout_constraintStart_toStartOf="@id/img_profile"
+        app:layout_constraintEnd_toEndOf="@id/img_profile"
+        android:fontFamily="sans-serif-black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tv_help_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Son 10 günde yardım \nettiğiniz sayı"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img_time"
+        app:layout_constraintTop_toBottomOf="@id/img_profile"
+        app:layout_constraintBottom_toTopOf="@id/tv_help_count"
+        android:layout_marginTop="100dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        />
+
+    <TextView
+        android:id="@+id/tv_help_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="60"
+        app:layout_constraintStart_toStartOf="@id/tv_help_label"
+        app:layout_constraintEnd_toStartOf="@id/img_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_help_label"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#b30047"
+        />
+
+    <ImageView
+        android:id="@+id/img_time"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/timer"
+        app:layout_constraintTop_toTopOf="@id/tv_help_label"
+        app:layout_constraintStart_toEndOf="@id/tv_help_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_help_label_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Şuana kadar yardım \nettiğiniz sayı"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img_time_total"
+        app:layout_constraintTop_toBottomOf="@id/img_time"
+        app:layout_constraintBottom_toTopOf="@id/tv_help_count_total"
+        android:layout_marginTop="60dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        />
+
+    <TextView
+        android:id="@+id/tv_help_count_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="160"
+        app:layout_constraintStart_toStartOf="@id/tv_help_label_total"
+        app:layout_constraintEnd_toStartOf="@id/img_time_total"
+        app:layout_constraintTop_toBottomOf="@id/tv_help_label_total"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#b30047"
+        />
+
+    <ImageView
+        android:id="@+id/img_time_total"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_sharp_family_restroom_24"
+        app:layout_constraintTop_toTopOf="@id/tv_help_label_total"
+        app:layout_constraintStart_toEndOf="@id/tv_help_label_total"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
