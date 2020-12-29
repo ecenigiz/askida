@@ -99,7 +99,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startUserDashboardActivity() {
-        var intent = Intent(this, DashboardUserActivity::class.java)
+        //var intent = Intent(this, DashboardUserActivity::class.java)
+        var intent = Intent(this, DashboardRestoranActivity::class.java)
         prograssBar.visibility = View.GONE
         startActivity(intent);
     }

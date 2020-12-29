@@ -34,5 +34,13 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
             cart_rv.adapter = CartRecyclerAdapter(Cart.getInstance().cartMap)
             tv_emty_cart.visibility=View.VISIBLE
         }
+        btn_take.setOnClickListener {
+            Toast.makeText(context,"Successfully you take !", Toast.LENGTH_LONG).show()
+            Cart.getInstance().emptyCart()
+            cart_rv.adapter = CartRecyclerAdapter(Cart.getInstance().cartMap)
+            tv_emty_cart.visibility=View.VISIBLE
+        }
+
+
     }
 }

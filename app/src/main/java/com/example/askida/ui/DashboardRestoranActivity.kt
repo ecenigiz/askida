@@ -45,7 +45,7 @@ class DashboardRestoranActivity : AppCompatActivity() {
                 R.id.item_rest_profile -> {
                     supportFragmentManager.beginTransaction().replace(
                         R.id.fragment_container,
-                        UserProfileFragment()
+                        RestoranProfile()
                     ).commit()
                     true
                 }

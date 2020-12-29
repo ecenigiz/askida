@@ -1,20 +1,13 @@
 package com.example.askida.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.example.askida.CartRecyclerAdapter
 import com.example.askida.Objects.Cart
 import com.example.askida.Objects.Restoran
 import com.example.askida.R
-import com.example.askida.RestoranRecyclerAdapter
 import com.example.askida.UserRestoranDetailAdapter
-import kotlinx.android.synthetic.main.fragment_search_restaurant.*
-import java.util.logging.LogManager
-import java.util.logging.Logger
 
 class UserRestoranDetailFragment : Fragment(R.layout.fragment_user_restaurant_detail) {
 
@@ -23,7 +16,7 @@ class UserRestoranDetailFragment : Fragment(R.layout.fragment_user_restaurant_de
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        restauran_item_rv = view.findViewById(R.id.cart_rv)
+        restauran_item_rv = view.findViewById(R.id.restoran_list_items_rv)
 
         val bundle = arguments
         if (bundle != null) restoran = bundle.getParcelable("restoran")!!
