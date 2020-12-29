@@ -27,19 +27,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/item_quantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="14dp"
-        android:text="1 Adet"
-        android:textSize="18sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/item_name"
-        app:layout_constraintEnd_toStartOf="@id/item_price"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,9 +34,18 @@
         android:text="30 TL"
         android:textSize="18sp"
         android:textStyle="italic"
+        app:layout_constraintTop_toTopOf="@id/btn_item_delete"
+        app:layout_constraintBottom_toBottomOf="@id/btn_item_delete"
+        app:layout_constraintEnd_toStartOf="@id/btn_item_delete"
+        />
+    <Button
+        android:id="@+id/btn_item_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DELETE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <View
         android:layout_width="match_parent"

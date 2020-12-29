@@ -8,7 +8,6 @@ class MainVM : BaseViewModel() {
     val registerValidationLiveData: LiveData<Boolean> = _registerValidationLiveData
 
     fun registerValidation(mail: String, password: String) {
-        _registerValidationLiveData.value =
-            mail.isNotEmpty() && password.isNotEmpty()
+        _registerValidationLiveData.value =(mail.isNotEmpty() && password.isNotEmpty())
     }
 }

@@ -1,6 +1,5 @@
-package com.example.askida
+package com.example.askida.Objects
 
-import com.example.askida.Objects.Item
 import java.util.*
 
 class Cart {

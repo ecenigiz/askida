@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item_add_item" android:title="Add Item"></item>
+    <item android:id="@+id/item_items" android:title="My Items"></item>
+    <item android:id="@+id/item_rest_profile" android:title="My Restoraunt"></item>
+</menu>

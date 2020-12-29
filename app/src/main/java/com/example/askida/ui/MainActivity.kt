@@ -16,6 +16,7 @@ import com.example.askida.ViewModel.MainVM
 import com.example.askida.ViewModel.RegisterVM
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.prograssBar
 import kotlinx.android.synthetic.main.activity_register.*
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         //null patterni olabilir.
         if (user != null) {
+
             startUserDashboardActivity()
         }
     }
@@ -38,17 +40,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setInitialListeners()
         vm = ViewModelProvider(this).get(MainVM::class.java)
+        setInitialListeners()
 
     }
 
     fun setInitialListeners() {
-
         btn_login.setOnClickListener {
             vm.registerValidation(
-                etemail.text.toString(),
-                etpassword.text.toString()
+                email.text.toString(),
+                password.text.toString()
             )
         }
 
@@ -56,8 +57,8 @@ class MainActivity : AppCompatActivity() {
             if (it) {
                 prograssBar.visibility = View.VISIBLE
                 auth.signInWithEmailAndPassword(
-                    email.text.trim().toString(),
-                    password.text.trim().toString()
+                    email.text.toString(),
+                    password.text.toString()
                 )
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful()) {
@@ -98,7 +99,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startUserDashboardActivity() {
-        var intent = Intent(this, DashboardUserActivity::class.java)
+        //var intent = Intent(this, DashboardUserActivity::class.java)
+        var intent = Intent(this, DashboardRestoranActivity::class.java)
         prograssBar.visibility = View.GONE
         startActivity(intent);
     }

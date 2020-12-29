@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.UserCaseRestoranDetail"></activity>
+        <activity android:name=".ui.DashboardRestoranActivity"></activity>
+        <activity android:name=".ui.UserCaseRestoranDetail" />
         <activity android:name=".ui.ForgorPasswordActivity" />
         <activity android:name=".ui.DashboardUserActivity" />
         <activity android:name=".ui.Register" />

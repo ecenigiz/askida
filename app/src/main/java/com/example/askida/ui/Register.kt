@@ -12,7 +12,6 @@ import com.example.askida.Helpers.Constants.SthWrong
 import com.example.askida.Helpers.Constants.SuccessfullyReqister
 import com.example.askida.Objects.User
 import com.example.askida.R
-import com.example.askida.ViewModel.MainVM
 import com.example.askida.ViewModel.RegisterVM
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -20,8 +19,8 @@ import kotlinx.android.synthetic.main.activity_register.*
 
 class Register : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var user: User
-    private lateinit var vm: RegisterVM
+    private var user= User()
+    private var vm = RegisterVM()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +30,11 @@ class Register : AppCompatActivity() {
         vm = ViewModelProvider(this).get(RegisterVM::class.java)
 
         btn_register.setOnClickListener {
-            user.Name=etname.text.toString()
-            user.Email=etemail.text.toString()
-            user.Password=etpassword.text.toString()
-            user.IsUserMarketPlace=brand_check.isChecked
+            user.Name = etname.text.toString()
+            user.Email = etemail.text.toString()
+            user.Password = etpassword.text.toString()
+            user.City=et_city.text.toString()
+            user.IsUserMarketPlace = brand_check.isChecked
 
             vm.registerValidation(
                 etname.text.toString(),
@@ -45,10 +45,9 @@ class Register : AppCompatActivity() {
 
         vm.registerValidationLiveData.observe(this) {
             if (it) {
-                createUser(etemail.text.toString(),etpassword.text.toString())
-            }
-            else{
-                Toast.makeText(this, "Tüm bilgileri doldurunuz",Toast.LENGTH_LONG).show()
+                createUser(etemail.text.toString(), etpassword.text.toString())
+            } else {
+                Toast.makeText(this, "Tüm bilgileri doldurunuz", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -59,11 +58,12 @@ class Register : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     //user database ine yazcaz şimdi
+
                     FirebaseDatabase.getInstance().getReference("Users")
-                        .child(FirebaseAuth.getInstance().uid!!)
+                        .child(auth.uid!!)
                         .setValue(user).addOnCompleteListener {
                             if (it.isSuccessful) {
-                                FirebaseAuth.getInstance().currentUser!!.sendEmailVerification()
+                                auth.currentUser?.sendEmailVerification()
                                 Toast.makeText(
                                     this,
                                     Constants.EmailVerify,
@@ -75,7 +75,7 @@ class Register : AppCompatActivity() {
                                 Toast.makeText(this, FailRegister, Toast.LENGTH_LONG).show()
                             }
                         }.addOnFailureListener {
-                            Toast.makeText(this,it.message,Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
                         }
 
                 } else {
