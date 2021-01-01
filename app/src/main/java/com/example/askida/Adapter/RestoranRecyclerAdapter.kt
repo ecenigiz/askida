@@ -1,4 +1,4 @@
-package com.example.askida
+package com.example.askida.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.askida.Objects.Restoran
+import com.example.askida.R
 
 
 class RestoranRecyclerAdapter(val itemList: List<Restoran>, private val listener: (Restoran) -> Unit) :

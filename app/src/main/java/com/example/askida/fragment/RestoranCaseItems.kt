@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.example.askida.Objects.Cart
 import com.example.askida.Objects.Item
 import com.example.askida.Objects.Restoran
 import com.example.askida.R
-import com.example.askida.RestoranItemsAdaptor
-import com.example.askida.UserRestoranDetailAdapter
+import com.example.askida.Adapter.RestoranItemsAdaptor
 
 class RestoranCaseItems: Fragment(R.layout.fragment_restoran_case_items) {
     lateinit var restoran: Restoran

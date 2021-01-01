@@ -6,10 +6,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.askida.Objects.Cart
-import com.example.askida.CartRecyclerAdapter
-import com.example.askida.Objects.Item
+import com.example.askida.Adapter.CartRecyclerAdapter
 import com.example.askida.R
-import com.google.api.Context
 import kotlinx.android.synthetic.main.fragment_cart.*
 
 class CartFragment : Fragment(R.layout.fragment_cart) {

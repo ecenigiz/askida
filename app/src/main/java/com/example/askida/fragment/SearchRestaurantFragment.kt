@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.askida.Objects.Item
 import com.example.askida.Objects.Restoran
 import com.example.askida.R
-import com.example.askida.RestoranRecyclerAdapter
+import com.example.askida.Adapter.RestoranRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_search_restaurant.*
 
 class SearchRestaurantFragment : Fragment(R.layout.fragment_search_restaurant) {

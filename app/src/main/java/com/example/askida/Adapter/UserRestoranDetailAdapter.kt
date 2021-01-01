@@ -1,4 +1,4 @@
-package com.example.askida
+package com.example.askida.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.askida.Objects.Item
 import com.example.askida.Objects.Restoran
+import com.example.askida.R
 import kotlinx.android.synthetic.main.item_restoran_detail.view.*
 
 class UserRestoranDetailAdapter(val itemList: List<Item>, private val listener: (Item) -> Unit) :
