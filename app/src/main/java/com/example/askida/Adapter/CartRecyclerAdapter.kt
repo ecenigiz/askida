@@ -17,8 +17,8 @@ class CartRecyclerAdapter(val itemList : List<Sale>) : RecyclerView.Adapter<Cart
         private val item_price = itemView.findViewById<TextView>(R.id.item_price)
         fun bind(item: Sale){
             item_name.text=item.item.name
-            //item_quantity.text=item.quantity.toString() + " Quantity"
-            item_price.text=item.item.price.toString() + " TL"
+            item_quantity.text=item.quantity.toString() + " Quantity"
+            item_price.text=(item.item.price * item.quantity).toString() + " TL"
         }
     }
 

@@ -34,9 +34,9 @@ class UserRestoranDetailFragment : Fragment(R.layout.fragment_user_restaurant_de
         if (bundle != null) restoran = bundle.getParcelable("restoran")!!
 
         val rest =vm.getRestorant(restoran)
-        restauran_item_rv.adapter = UserRestoranDetailAdapter(rest.items) { item ->
+        restauran_item_rv.adapter = UserRestoranDetailAdapter(rest.items) { item, quantity ->
             Toast.makeText(context, ItemAdded, Toast.LENGTH_LONG).show()
-            vm.addCart(Sale("1",userId,restoran.id,item, Calendar.getInstance().time,false,1))
+            vm.addCart(Sale("1",userId,restoran.id,item, Calendar.getInstance().time,false,quantity))
 
         }
     }

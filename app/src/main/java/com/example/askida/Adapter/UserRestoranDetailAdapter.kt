@@ -11,8 +11,9 @@ import com.example.askida.Objects.Restoran
 import com.example.askida.R
 import kotlinx.android.synthetic.main.item_restoran_detail.view.*
 
-class UserRestoranDetailAdapter(val itemList: List<Item>, private val listener: (Item) -> Unit) :
+class UserRestoranDetailAdapter(val itemList: List<Item>, private val listener: (Item,Int) -> Unit) :
     RecyclerView.Adapter<UserRestoranDetailAdapter.ViewHolder>() {
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val item_name = itemView.findViewById<TextView>(R.id.item_name)
@@ -20,16 +21,18 @@ class UserRestoranDetailAdapter(val itemList: List<Item>, private val listener: 
         private val item_price_total = itemView.findViewById<TextView>(R.id.item_price_total)
         private val item_price = itemView.findViewById<TextView>(R.id.item_price)
         private val btn_add = itemView.findViewById<TextView>(R.id.btn_add)
+
+
         fun bind(item: Item) {
             item_name.text = item.name
             item_quantity.minValue = 1
             item_quantity.maxValue = 100
             item_quantity.wrapSelectorWheel = true
             item_price.text = item.price.toString()
-            //item_price_total.text = (item.quantity * item.price).toString() + " TL"
+            item_price_total.text = (item.price).toString() + " TL"
 
             item_quantity.setOnValueChangedListener { picker, oldVal, newVal ->
-              //  item.quantity=newVal
+                item_price_total.text = (item.price*newVal).toString() + " TL"
             }
         }
     }
@@ -43,7 +46,8 @@ class UserRestoranDetailAdapter(val itemList: List<Item>, private val listener: 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item=itemList[position]
         holder.bind(item)
-        holder.itemView.btn_add.setOnClickListener { listener(item) }
+        holder.itemView.btn_add.setOnClickListener {
+            listener(item,holder.itemView.item_quantity.value) }
     }
 
     override fun getItemCount(): Int = itemList.size
