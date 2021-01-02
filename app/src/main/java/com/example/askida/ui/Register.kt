@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.askida.Db.RestoranDB
 import com.example.askida.Helpers.Constants
 import com.example.askida.Helpers.Constants.FailRegister
 import com.example.askida.Helpers.Constants.SthWrong
@@ -53,24 +54,25 @@ class Register : AppCompatActivity() {
     }
 
     fun createUser(email: String, password: String) {
-        //Patternin adını yaz functional olması +listener
+        //builder pattern
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
+                //observer
                 if (task.isSuccessful) {
-                    //user database ine yazcaz şimdi
-
                     FirebaseDatabase.getInstance().getReference("Users")
                         .child(auth.uid!!)
                         .setValue(user).addOnCompleteListener {
                             if (it.isSuccessful) {
                                 auth.currentUser?.sendEmailVerification()
+                                user.Id=auth.currentUser!!.uid
+                                vm.addIfRestorant(user)
                                 Toast.makeText(
                                     this,
                                     Constants.EmailVerify,
                                     Toast.LENGTH_LONG
                                 )
                                 Toast.makeText(this, SuccessfullyReqister, Toast.LENGTH_LONG).show()
-                                startUserDashboardActivity()
+                                startUserDashboardActivity(user.Id)
                             } else {
                                 Toast.makeText(this, FailRegister, Toast.LENGTH_LONG).show()
                             }
@@ -88,8 +90,15 @@ class Register : AppCompatActivity() {
 
     }
 
-    fun startUserDashboardActivity() {
-        var intent = Intent(this, DashboardUserActivity::class.java)
+    fun startUserDashboardActivity(id:String) {
+        val intent : Intent
+        if(RestoranDB.getInstance()!!.restoranMap.find { x->x.id.equals(id) }==null)
+        {
+            intent = Intent(this, DashboardUserActivity::class.java)
+        }
+        else{
+            intent = Intent(this, DashboardRestoranActivity::class.java)
+        }
         startActivity(intent);
     }
 }

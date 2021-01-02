@@ -1,4 +1,4 @@
-package com.example.askida
+package com.example.askida.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,29 +6,30 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.askida.Objects.Item
-import kotlinx.android.synthetic.main.item_restoran_detail.view.*
-import kotlinx.android.synthetic.main.item_restoran_items.view.*
+import com.example.askida.Objects.Sale
+import com.example.askida.R
 
-class RestoranItemsAdaptor(val itemList : List<Item>, private val listener: (Item) -> Unit) : RecyclerView.Adapter<RestoranItemsAdaptor.ViewHolder>() {
+class CartRecyclerAdapter(val itemList : List<Sale>) : RecyclerView.Adapter<CartRecyclerAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         private val item_name = itemView.findViewById<TextView>(R.id.item_name)
+        private val item_quantity = itemView.findViewById<TextView>(R.id.item_quantity)
         private val item_price = itemView.findViewById<TextView>(R.id.item_price)
-        fun bind(item: Item){
-            item_name.text=item.name
-            item_price.text=item.price.toString() + " TL"
+        fun bind(item: Sale){
+            item_name.text=item.item.name
+            item_quantity.text=item.quantity.toString() + " Quantity"
+            item_price.text=(item.item.price * item.quantity).toString() + " TL"
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v  = LayoutInflater.from(parent.context).inflate(R.layout.item_restoran_items,parent,false)
+        val v  = LayoutInflater.from(parent.context).inflate(R.layout.item_cart,parent,false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item=itemList[position]
-        holder.bind(item)
-        holder.itemView.btn_item_delete.setOnClickListener { listener(item) }    }
+        holder.bind(itemList[position])
+    }
 
     override fun getItemCount(): Int = itemList.size
 }

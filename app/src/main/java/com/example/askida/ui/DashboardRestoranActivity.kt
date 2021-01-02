@@ -54,6 +54,7 @@ class DashboardRestoranActivity : AppCompatActivity() {
                 }
             }
         }
+        bottomNavigation.selectedItemId= R.id.item_items
         btn_logout.setOnClickListener { logOut() }
     }
 
