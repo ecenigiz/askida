@@ -3,7 +3,7 @@ package com.example.askida.Objects
 import java.util.*
 
 class Cart {
-    var cartMap : ArrayList<Item> = arrayListOf()
+    var cartMap : ArrayList<Sale> = arrayListOf()
 
     fun emptyCart() {
         cartMap.clear()

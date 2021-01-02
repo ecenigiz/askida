@@ -6,18 +6,19 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.askida.Objects.Item
+import com.example.askida.Objects.Sale
 import com.example.askida.R
 
-class CartRecyclerAdapter(val itemList : List<Item>) : RecyclerView.Adapter<CartRecyclerAdapter.ViewHolder>() {
+class CartRecyclerAdapter(val itemList : List<Sale>) : RecyclerView.Adapter<CartRecyclerAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         private val item_name = itemView.findViewById<TextView>(R.id.item_name)
         private val item_quantity = itemView.findViewById<TextView>(R.id.item_quantity)
         private val item_price = itemView.findViewById<TextView>(R.id.item_price)
-        fun bind(item: Item){
-            item_name.text=item.name
-            item_quantity.text=item.quantity.toString() + " Quantity"
-            item_price.text=item.price.toString() + " TL"
+        fun bind(item: Sale){
+            item_name.text=item.item.name
+            //item_quantity.text=item.quantity.toString() + " Quantity"
+            item_price.text=item.item.price.toString() + " TL"
         }
     }
 

@@ -1,10 +1,11 @@
 package com.example.askida.Db
 
+import com.example.askida.Objects.Restoran
 import com.example.askida.Objects.Sale
 import java.util.ArrayList
 
 class RestoranDB {
-    var saleMap: ArrayList<Sale> = arrayListOf()
+    var restoranMap: ArrayList<Restoran> = arrayListOf()
 
     companion object {
         private var restoran: RestoranDB? = null

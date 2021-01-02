@@ -17,11 +17,11 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_dashboard_user.*
 
 class DashboardUserActivity : AppCompatActivity() {
-    private lateinit var user: FirebaseUser
-    private lateinit var reference: DatabaseReference
+    //private lateinit var user: FirebaseUser
+    //private lateinit var reference: DatabaseReference
     private lateinit var fragmentContainer: FragmentContainerView
     private lateinit var bottomNavigation : BottomNavigationView
-    lateinit var userId: String
+   // lateinit var userId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,24 +47,6 @@ class DashboardUserActivity : AppCompatActivity() {
                 else -> {false}
             }
         }
-
-        /* userId=""
-         user = FirebaseAuth.getInstance().currentUser!!
-         reference = FirebaseDatabase
-             .getInstance().getReference().child("Users").child(userId)
-         userId = user.uid
-
-         reference.child(userId).addListenerForSingleValueEvent(object : ValueEventListener {
-             override fun onCancelled(error: DatabaseError) {
-             }
-
-             override fun onDataChange(snapshot: DataSnapshot) {
-                 var userProfile = snapshot.getValue(User::class.java)
-                 if (userProfile != null) {
-                     currentUser=userProfile
-                 }
-             }
-         })*/
         Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
 
         btn_logout.setOnClickListener {  logOut()}
@@ -80,3 +62,20 @@ class DashboardUserActivity : AppCompatActivity() {
         startActivity(intent);
     }
 }
+/* userId=""
+ user = FirebaseAuth.getInstance().currentUser!!
+ reference = FirebaseDatabase
+     .getInstance().getReference().child("Users").child(userId)
+ userId = user.uid
+
+ reference.child(userId).addListenerForSingleValueEvent(object : ValueEventListener {
+     override fun onCancelled(error: DatabaseError) {
+     }
+
+     override fun onDataChange(snapshot: DataSnapshot) {
+         var userProfile = snapshot.getValue(User::class.java)
+         if (userProfile != null) {
+             currentUser=userProfile
+         }
+     }
+ })*/

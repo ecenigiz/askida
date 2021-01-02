@@ -26,10 +26,10 @@ class UserRestoranDetailAdapter(val itemList: List<Item>, private val listener: 
             item_quantity.maxValue = 100
             item_quantity.wrapSelectorWheel = true
             item_price.text = item.price.toString()
-            item_price_total.text = (item.quantity * item.price).toString() + " TL"
+            //item_price_total.text = (item.quantity * item.price).toString() + " TL"
 
             item_quantity.setOnValueChangedListener { picker, oldVal, newVal ->
-                item.quantity=newVal
+              //  item.quantity=newVal
             }
         }
     }

@@ -1,5 +1,7 @@
 package com.example.askida.Helpers
 
+import java.text.SimpleDateFormat
+
 class companian object Constants {
     var  RequireMail: String = "Mail is requried !";
     var RequirePassword: String = "Password is requried !";
@@ -9,5 +11,10 @@ class companian object Constants {
     var SuccessfullyReqister: String = "Successfully save your data.Check your email";
     var FailRegister: String = "Failed to register :( Can you try again ? ";
     var SthWrong: String = "Sth's gone wrong  :( ";
+    var SuccessfullyTake: String = "Successfully you take ";
+    var SuccessfullyDonate: String = "Successfully you donated ";
+    var ItemAdded: String = "Item is added";
+
+    val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
 
 }

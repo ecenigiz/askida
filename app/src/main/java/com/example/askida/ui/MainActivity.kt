@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.askida.Db.DbInitial
+import com.example.askida.Db.RestoranDB
 import com.example.askida.Helpers.Constants.AuthenticationFailed
 import com.example.askida.Helpers.Constants.EmailVerify
 import com.example.askida.Helpers.Constants.RequireMail
@@ -29,11 +31,10 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         auth = FirebaseAuth.getInstance()
         val user = auth.currentUser
+        DbInitial.getInstance()
 
-        //null patterni olabilir.
         if (user != null) {
-
-            startUserDashboardActivity()
+            startUserDashboardActivity(user.uid)
         }
     }
 
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                         if (task.isSuccessful()) {
                             val user: FirebaseUser = auth.getCurrentUser()!!
                             if (user.isEmailVerified) {
-                                startUserDashboardActivity()
+                                startUserDashboardActivity(user.uid)
                             } else {
                                 user.sendEmailVerification()
                                 Toast.makeText(
@@ -98,9 +99,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun startUserDashboardActivity() {
-        //var intent = Intent(this, DashboardUserActivity::class.java)
-        var intent = Intent(this, DashboardRestoranActivity::class.java)
+    fun startUserDashboardActivity(id:String) {
+        val intent:Intent
+
+        if(RestoranDB.getInstance()!!.restoranMap.find { x->x.id.equals(id) }==null)
+        {
+            intent = Intent(this, DashboardUserActivity::class.java)
+        }
+        else{
+            intent = Intent(this, DashboardRestoranActivity::class.java)
+        }
         prograssBar.visibility = View.GONE
         startActivity(intent);
     }
