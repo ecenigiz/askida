@@ -10,18 +10,12 @@ import com.example.askida.Db.DbInitial
 import com.example.askida.Db.RestoranDB
 import com.example.askida.Helpers.Constants.AuthenticationFailed
 import com.example.askida.Helpers.Constants.EmailVerify
-import com.example.askida.Helpers.Constants.RequireMail
-import com.example.askida.Helpers.Constants.RequirePassword
-import com.example.askida.Helpers.Validation
 import com.example.askida.R
 import com.example.askida.ViewModel.MainVM
-import com.example.askida.ViewModel.RegisterVM
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.prograssBar
-import kotlinx.android.synthetic.main.activity_register.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth

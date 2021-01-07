@@ -6,14 +6,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.example.askida.Helpers.Constants
 import com.example.askida.Helpers.Constants.EmailVerify
 import com.example.askida.Helpers.Constants.SthWrong
-import com.example.askida.Helpers.Validation
 import com.example.askida.R
 import com.example.askida.ViewModel.ForgotPasswordVM
-import com.example.askida.ViewModel.MainVM
-import com.example.askida.ViewModel.RegisterVM
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_forgor_password.*
 import kotlinx.android.synthetic.main.activity_forgor_password.email
