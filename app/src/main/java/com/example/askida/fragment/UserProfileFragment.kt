@@ -16,18 +16,6 @@ class UserProfileFragment : Fragment(R.layout.fragment_user_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*var userId= FirebaseAuth.getInstance().currentUser!!.uid
-        var totalDonated=0
-        var totalItem=0
-        SalesDb.getInstance()!!.salesMap.forEach{
-            if (it.userId==userId ) {
-                if (it.isDonated) {
-                    totalDonated++
-                }
-                else
-                    totalItem++
-            }
-        }*/
         vm.calculateCount()
         tv_help_count.text = vm.totalDonated.toString()
         tv_help_count_total.text = vm.totalTaken.toString()

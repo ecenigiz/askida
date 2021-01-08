@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_register.*
 class ForgorPasswordActivity : AppCompatActivity() {
 
     lateinit var auth: FirebaseAuth
-    private  var vm=ForgotPasswordVM()
+    private var vm = ForgotPasswordVM()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +44,6 @@ class ForgorPasswordActivity : AppCompatActivity() {
     }
 
     fun resetPassword() {
-
         val emailValue = email.text.trim().toString()
         prograssBar.visibility = View.VISIBLE
         auth.sendPasswordResetEmail(emailValue).addOnCompleteListener {

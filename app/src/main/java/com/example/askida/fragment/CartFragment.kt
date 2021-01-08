@@ -23,33 +23,30 @@ import java.util.*
 
 class CartFragment : Fragment(R.layout.fragment_cart) {
 
-    lateinit var cart_rv : RecyclerView
-    val vm= CartFragmentVM()
+    lateinit var cart_rv: RecyclerView
+    val vm = CartFragmentVM()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if(vm.isCartNotEmpty())
-             tv_emty_cart.visibility=View.GONE
+        if (vm.isCartNotEmpty())
+            tv_emty_cart.visibility = View.GONE
         else
-            tv_emty_cart.visibility=View.VISIBLE
+            tv_emty_cart.visibility = View.VISIBLE
 
         cart_rv = view.findViewById(R.id.cart_rv)
         cart_rv.adapter = CartRecyclerAdapter(Cart.getInstance().cartMap)
 
         btn_buy.setOnClickListener {
-            Toast.makeText(context, SuccessfullyDonate, Toast.LENGTH_LONG).show()
-            vm.donateCart()
-            Cart.getInstance().emptyCart()
+            var message = vm.donateCart()
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
             cart_rv.adapter = CartRecyclerAdapter(Cart.getInstance().cartMap)
-            tv_emty_cart.visibility=View.VISIBLE
+            tv_emty_cart.visibility = View.VISIBLE
         }
         btn_take.setOnClickListener {
-            Toast.makeText(context,SuccessfullyTake, Toast.LENGTH_LONG).show()
-
-            vm.takCart()
-            Cart.getInstance().emptyCart()
+            var message = vm.takeCart()
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
             cart_rv.adapter = CartRecyclerAdapter(Cart.getInstance().cartMap)
-            tv_emty_cart.visibility=View.VISIBLE
+            tv_emty_cart.visibility = View.VISIBLE
         }
     }
 }

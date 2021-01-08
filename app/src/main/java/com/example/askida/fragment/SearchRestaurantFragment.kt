@@ -35,23 +35,6 @@ class SearchRestaurantFragment : Fragment(R.layout.fragment_search_restaurant) {
         }
     }
 }
-/*
-    fun getRestoran() {
-        var selectedItem=RestoranDB.getInstance()!!.restoranMap.filter { s-> s.City.startsWith(et_city.text) }
-        restaurant_rv.adapter = RestoranRecyclerAdapter(selectedItem){
-            item->
-
-            var bundle = Bundle()
-            bundle.putParcelable("restoran", item)
-            var frag = UserRestoranDetailFragment()
-            frag.arguments = bundle
-
-            CartFragment().arguments=bundle
-
-            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,frag)
-                .commit()
-        }
-    }*/
 
 /*var db = FirebaseFirestore.getInstance()
 

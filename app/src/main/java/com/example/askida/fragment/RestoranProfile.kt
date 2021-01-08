@@ -9,26 +9,14 @@ import com.example.askida.ViewModel.RestoranProfileVM
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_restoran_profile.*
 
-class RestoranProfile: Fragment(R.layout.fragment_restoran_profile)  {
-    val vm= RestoranProfileVM()
+class RestoranProfile : Fragment(R.layout.fragment_restoran_profile) {
+    val vm = RestoranProfileVM()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       /* var userId=FirebaseAuth.getInstance().currentUser!!.uid
-        var totalDonated=0
-        var totalItem=0
-        SalesDb.getInstance()!!.salesMap.forEach{
-            if (it.restoranId==userId ) {
-                if (it.isDonated) {
-                    totalDonated++
-                }
-                else
-                    totalItem++
-            }
-        }*/
         vm.calculateCount()
-        tv_help_count.text=vm.totalDonated.toString()
-        tv_help_count_total.text=vm.total.toString()
-        profile_name.text=vm.getRestorant()
+        tv_help_count.text = vm.totalDonated.toString()
+        tv_help_count_total.text = vm.total.toString()
+        profile_name.text = vm.getRestorant()
     }
 }

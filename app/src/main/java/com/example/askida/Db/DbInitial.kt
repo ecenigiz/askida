@@ -31,6 +31,11 @@ class DbInitial {
                 restoran.items.add(itemArmut)
                 RestoranDB.getInstance()!!.restoranMap.add(restoran)
 
+                restoran = Restoran("UrKujMCIBCS38eFIUWPbmOetEgH2", "Izmir Bakkal", "istanbul")
+                restoran.items.add(itemElma)
+                restoran.items.add(itemArmut)
+                RestoranDB.getInstance()!!.restoranMap.add(restoran)
+
                 SalesDb.getInstance()!!.salesMap.add(Sale("1","fBwZUn8YHKgE5Xdv1icg4hRMClH2","cOpPkjue3sUvV9XTzv6FdkRVPYB3",itemArmut,
                     Calendar.getInstance().time,true,4))
                 SalesDb.getInstance()!!.salesMap.add(Sale("1","fBwZUn8YHKgE5Xdv1icg4hRMClH2","cOpPkjue3sUvV9XTzv6FdkRVPYB3",itemArmut,

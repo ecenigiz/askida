@@ -9,7 +9,7 @@ import com.example.askida.Objects.Item
 import com.example.askida.R
 import kotlinx.android.synthetic.main.item_restoran_items.view.*
 
-class RestoranItemsAdaptor(val itemList : List<Item>, private val listener: (Item) -> Unit) : RecyclerView.Adapter<RestoranItemsAdaptor.ViewHolder>() {
+class RestoranItemsAdapter(val itemList : List<Item>, private val listener: (Item) -> Unit) : RecyclerView.Adapter<RestoranItemsAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         private val item_name = itemView.findViewById<TextView>(R.id.item_name)

@@ -13,8 +13,11 @@ class companian object Constants {
     var SthWrong: String = "Sth's gone wrong  :( ";
     var SuccessfullyTake: String = "Successfully you take ";
     var SuccessfullyDonate: String = "Successfully you donated ";
+    var SuccessfullyDeleted: String = "Successfully deleted  ";
+    var SuccessfullyAdded: String = "Successfully added  ";
     var ItemAdded: String = "Item is added";
 
     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
 
 }
+
